@@ -1,0 +1,64 @@
+CLIENT
+
+Afficher Client
+curl -X GET -H "Content-Type: application/json"  http://localhost:8000/clients/{ID}
+
+Creer Client
+curl -X POST http://localhost:8000/clients/create \
+    -H "Content-Type: application/json" \
+    -d '{
+        "nom": "NomClient",
+        "prenom": "PrenomClient",
+        "email": "client@example.com",
+        "password": "motdepasse",
+        "telephone": "0123456789",
+        "devise": "EUR"
+    }'
+
+
+
+Supprimer client
+curl -X DELETE -H "Content-Type: application/json"  http://localhost:8000/clients/delete/{ID}
+
+
+
+Se connecter
+FALSE: curl -X POST http://localhost:8000/seconnecter -H "Content-Type: application/json" -d '{"hotelID": "votre_hotel_id", "motdepasse": "votre_mot_de_passe"}'
+
+TRUE: curl -X POST http://localhost:8000/seconnecter -H "Content-Type: application/json" -d '{"hotelID": "4zINvLxWXo", "motdepasse": "motdepasse"}'
+
+
+
+CREER CLIENT
+curl -X POST -H "Content-Type: application/json" -d '{
+    "nom": "NomDuClient",
+    "prenom": "PrenomDuClient",
+    "email": "email@exemple.com",
+    "telephone": "0123456789",
+    "password": "MotDePasseDuClient",
+    "devise": "Euro"
+}' http://localhost:8000/clients/create
+
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -d "500" http://localhost:8000/portefeuille/crediter/46
+
+
+
+
+
+curl -X POST http://localhost:8000/chambres/standard
+curl -X POST http://localhost:8000/chambres/superieur
+curl -X POST http://localhost:8000/chambres/suite
+
+curl -X DELETE http://localhost:8000/chambres/supprimer/1
+
+
+
+
+curl -X POST -d '{"clientId":"30", "portefeuilleId":"40", "chambreId":"2", "dateDebut":"01-01-2024", "dateFin":"01-01-2024", "prixChambre":"100"}' -H "Content-Type: application/json" http://localhost:8000/reservation/creer
+
+
+curl -X POST -H "Content-Type: application/json" http://localhost:8000/reservation/30

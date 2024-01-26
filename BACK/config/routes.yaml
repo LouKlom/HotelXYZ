@@ -1,0 +1,101 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+
+
+#CLIENT
+clients_create:
+    path: '/clients/create'
+    controller: 'App\Controller\ClientController::create'
+    methods: ['POST']
+
+clients_read:
+    path: '/clients/{clientId}'
+    controller: 'App\Controller\ClientController::read'
+    methods: ['GET']
+
+clients_update:
+    path: '/clients/update/{clientId}'
+    controller: 'App\Controller\ClientController::update'
+    methods: ['PUT']
+
+clients_delete:
+    path: '/clients/delete/{clientId}'
+    controller: 'App\Controller\ClientController::delete'
+    methods: ['DELETE']
+
+clients_seconnecter:
+    path: '/seconnecter'
+    controller: 'App\Controller\ClientController::seConnecter'
+    methods: ['POST']
+
+
+
+
+
+crediter_portefeuille:
+    path: '/portefeuille/crediter/{portefeuilleId}'
+    controller: 'App\Controller\PortefeuilleController::crediter'
+    methods: ['POST']
+
+debiter_portefeuille:
+    path: '/portefeuille/debiter/{portefeuilleId}'
+    controller: 'App\Controller\PortefeuilleController::debiter'
+    methods: ['POST']
+
+creer_portefeuille:
+    path: '/portefeuille/creer/{clientId}'
+    controller: 'App\Controller\PortefeuilleController::creer'
+    methods: ['POST']
+
+afficher_portefeuille:
+    path: '/portefeuille/afficher/{portefeuilleId}'
+    controller: 'App\Controller\PortefeuilleController::getPortefeuille'
+    methods: ['GET']
+
+
+
+
+
+chambre_standard_create:
+    path: '/chambres/standard'
+    controller: 'App\Controller\ChambreController::creerChambreStandard'
+    methods: ['POST']
+
+chambre_superieur_create:
+    path: '/chambres/superieur'
+    controller: 'App\Controller\ChambreController::creerChambreSuperieur'
+    methods: ['POST']
+
+chambre_suite_create:
+    path: '/chambres/suite'
+    controller: 'App\Controller\ChambreController::creerSuite'
+    methods: ['POST']
+
+chambre_list:
+    path: '/chambres'
+    controller: 'App\Controller\ChambreController::listerChambres'
+    methods: ['GET']
+
+
+chambre_delete:
+    path: '/chambres/supprimer/{chambre}'
+    controller: 'App\Controller\ChambreController::deleteChambre'
+    methods: ['DELETE']
+
+
+
+
+
+reservation_creer:
+    path: '/reservation/creer'
+    controller: 'App\Controller\ReservationController::creerReservation'
+    methods: ['POST']
+
+reservation_afficher:
+    path: '/reservation/{clientId}'
+    controller : 'App\Controller\ReservationController::getReservationsByClientId'
+    methods: ['GET']
